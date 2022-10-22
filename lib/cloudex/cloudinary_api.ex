@@ -29,6 +29,7 @@ defmodule Cloudex.CloudinaryApi do
       "http://" <> _rest -> upload_url(item, opts)
       "https://" <> _rest -> upload_url(item, opts)
       "s3://" <> _rest -> upload_url(item, opts)
+      "data:image" <> _rest -> upload_url(item, opts)
       _ -> upload_file(item, opts)
     end
   end
